@@ -7,7 +7,7 @@ Simply volume mount your directory into /data and run whatever compile command y
 Here's an alias:
 
 ```bash
-alias musl-cross-x86_64-linux="sudo docker run -it --rm -v $PWD:/data bannsec/musl-cross-x86_64-linux $@"
+alias musl-cross-x86_64-linux='sudo docker run -it --rm -v $PWD:/data bannsec/musl-cross-x86_64-linux $@'
 ```
 
 An example of using that would be:
@@ -42,5 +42,5 @@ Sometimes you may want to adjust different compile flags. Please note that some 
 Example:
 
 ```bash
-./configure CFLAGS="$CFLAGS -g"
+./configure CFLAGS="$CFLAGS -static -Os" CXXFLAGS="$CXXFLAGS -static -Os"
 ```
