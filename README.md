@@ -44,3 +44,11 @@ Example:
 ```bash
 ./configure CFLAGS="$CFLAGS -static -Os" CXXFLAGS="$CXXFLAGS -static -Os"
 ```
+
+## Getting Segfaults?
+
+This container is setup to build and run everything as musl. Things like `apt` will SEGFAULT on you. To fix this, simply:
+
+```bash
+unset LD_LIBRARY_PATH
+```
